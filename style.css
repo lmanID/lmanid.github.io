@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+button {
+  border: none;
+}
+
+/* ===================================PRICE LIST BRIO=================================== */
+.sectionList {
+  display: grid;
+  row-gap: 8px;
+}
+
+/*=================EFEK TRANSISI====================*/
+.even {
+  animation: evenAnimation 2s forwards;
+}
+
+.odd {
+  animation: oddAnimation 2s forwards;
+}
+
+@keyframes evenAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(80%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes oddAnimation {
+  0% {
+    opacity: 0;
+    transform: translateX(-80%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*=================AKHIR EFEK TRANSISI==============*/
+
+.sectionList .accordion {
+  /* width: 100%; */
+  background-color: rgb(255, 255, 255);
+  color: rgb(20, 20, 20);
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  /* margin-bottom: 12px;
+  padding: 6px 0; */
+  border: 2px solid black;
+  border-radius: 6px;
+  transition: 0.5s;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sectionList .accordion:hover {
+  background-color: red;
+  color: white;
+}
+.sectionList .accordion.active {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+.sectionList .accordion .icon {
+  font-size: 30px;
+  font-weight: 700;
+  position: absolute;
+  right: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+}
+
+.sectionList .accordion .icon.active {
+  transform: rotate(-90deg);
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+  margin: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s; /* Menambahkan transisi ke opacity */
+}
+
+.panel.active {
+  max-height: 1000px;
+}
+
+.panel .list .listHeader {
+  background-color: red;
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+}
+
+.panel ul li {
+  list-style-type: none;
+  display: flex;
+  border: solid 1px black;
+  border-radius: 6px;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+  padding: 5px;
+  width: 300px;
+}
+/* ===================================AKHIR PRICE LIST BRIO=================================== */
+
+/* =========== BOOTSTRAP CSS =========== */
+
+/* // `sm` applies to x-small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .container-list {
+    padding: 0 6px;
+  }
+  .sectionList {
+    gap: 0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  .sectionList .accordion {
+    font-size: 1.125em;
+    font-weight: 600;
+    padding: 4px;
+  }
+  .sectionList .accordion .icon {
+    font-size: 1.125em;
+    font-weight: 600;
+  }
+
+  .panel {
+    column-gap: 10px;
+    margin: 0 8px;
+  }
+  .panel .list .listHeader {
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .panel ul li {
+    width: auto;
+    font-size: 0.8em;
+    margin-top: 6px;
+    padding: 5px 15px;
+  }
+}
+
+/* // `md` applies to small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* // `lg` applies to medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* // `xl` applies to large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+
+/* // `xxl` applies to x-large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}
