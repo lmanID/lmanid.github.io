@@ -1,3 +1,16 @@
+const btn_menu_toggle = document.querySelector('.btn_menu_toggle');
+const box_icon_close = document.querySelector('.box_icon_close');
+
+btn_menu_toggle.addEventListener('click', function () {
+  const nav_menu_list = document.querySelector('.nav_menu_list');
+  nav_menu_list.classList.add('active');
+});
+
+box_icon_close.addEventListener('click', () => {
+  const nav_menu_list = document.querySelector('.nav_menu_list');
+  nav_menu_list.classList.remove('active');
+});
+
 // HONDA BRIO
 let strTypeHondaBrio =
   'S MT, E MT, E CVT, RS MT, RS CVT, RS URBANITE MT, RS URBANITE CVT';
@@ -310,7 +323,27 @@ hondaAccordData.prices.forEach((price) => {
 
 // ====================== Animation KETIKA HALAMAN BARU DI MUAT ======================
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const sectionList = document.querySelectorAll('.sectionList');
+
+//   sectionList.forEach((section, index) => {
+//     if (index % 2 === 0) {
+//       section.classList.add('even');
+//     } else {
+//       section.classList.add('odd');
+//     }
+//   });
+
+//   // Triggering the animation
+//   setTimeout(() => {
+//     sectionList.forEach((section, index) => {
+//       section.style.opacity = '1';
+//       section.style.transform = 'translateX(0)';
+//     });
+//   }, 1000);
+// });
 document.addEventListener('DOMContentLoaded', function () {
+  console.log('DOMContentLoaded event fired');
   const sectionList = document.querySelectorAll('.sectionList');
 
   sectionList.forEach((section, index) => {
@@ -323,19 +356,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Triggering the animation
   setTimeout(() => {
+    console.log('Animation triggered');
     sectionList.forEach((section, index) => {
       section.style.opacity = '1';
       section.style.transform = 'translateX(0)';
     });
   }, 100);
 });
+
 // ====================== AKHIR ====>>> Animation KETIKA HALAMAN BARU DI MUAT ======================
 
 // ================================ Button ALL NEW TYPE // KETIKA DI KLIK UNTUK MENAMPILKAN LIST =========================
 const accordions = Array.from(document.getElementsByClassName('accordion'));
 const panels = Array.from(document.getElementsByClassName('panel'));
 const icons = document.getElementsByClassName('icon');
-console.log(icons);
 
 accordions.forEach((accordion, index) => {
   accordion.addEventListener('click', () => {
@@ -358,3 +392,4 @@ accordions.forEach((accordion, index) => {
   });
 });
 // ==============================  ======= AKHIR ====>> Button ALL NEW TYPE // KETIKA DI KLIK UNTUK MENAMPILKAN LIST =========================
+console.log(document.body);
