@@ -11,6 +11,19 @@ box_icon_close.addEventListener('click', () => {
   nav_menu_list.classList.remove('active');
 });
 
+const btn_menu = document.querySelector('.btn_menu');
+console.log(btn_menu.offsetHeight);
+
+const fix_btn_menu = () => {
+  if (window.scrollY > btn_menu.offsetHeight + 41) {
+    btn_menu.classList.add('active');
+  } else {
+    btn_menu.classList.remove('active');
+  }
+};
+
+window.addEventListener('scroll', fix_btn_menu);
+
 // HONDA BRIO
 let strTypeHondaBrio =
   'S MT, E MT, E CVT, RS MT, RS CVT, RS URBANITE MT, RS URBANITE CVT';
@@ -343,7 +356,6 @@ hondaAccordData.prices.forEach((price) => {
 //   }, 1000);
 // });
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('DOMContentLoaded event fired');
   const sectionList = document.querySelectorAll('.sectionList');
 
   sectionList.forEach((section, index) => {
@@ -356,7 +368,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Triggering the animation
   setTimeout(() => {
-    console.log('Animation triggered');
     sectionList.forEach((section, index) => {
       section.style.opacity = '1';
       section.style.transform = 'translateX(0)';
@@ -392,4 +403,3 @@ accordions.forEach((accordion, index) => {
   });
 });
 // ==============================  ======= AKHIR ====>> Button ALL NEW TYPE // KETIKA DI KLIK UNTUK MENAMPILKAN LIST =========================
-console.log(document.body);

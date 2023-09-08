@@ -6,6 +6,10 @@
   padding: 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
   /* display: flex;
   justify-content: center;
@@ -153,12 +157,12 @@ button {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 5px;
+    padding: 12px;
     position: sticky;
   }
 
   .header-logo {
-    width: 25%;
+    width: 40%;
   }
 
   .btn_menu {
@@ -166,29 +170,79 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(20, 20, 20);
-    padding: 8px 12px;
+    background-color: #d70b21;
+    padding: 6px 12px;
     margin-bottom: 12px;
-    position: sticky;
     position: -webkit-sticky;
+    position: sticky;
     top: 0;
     z-index: 1;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-    transition: all 0.3s ease; /* Animasi perubahan */
+    transition: all 0.3s ease-in-out;
   }
 
-  .btn_logo {
-    width: 20%;
+  .btn_menu.active {
+    background-color: #d70b21;
+    padding: 12px 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
   }
 
   .btn_menu_toggle i {
-    font-size: 2.5em;
+    font-size: 1.8em;
     color: #ffffff;
+    font-weight: 500;
+    display: block;
   }
 
   .btn_logo img {
     width: 100%;
   }
+
+  .btn_menu_bottom {
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 6px;
+    border-top: solid 0.1px rgb(158, 158, 158);
+    border-radius: 5px 5px 0 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+  }
+
+  .btn_menu_bottom .icon_btn_bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* background-color: red; */
+    width: 100%;
+    gap: 4px 12px;
+  }
+
+  .icon_btn_bottom li {
+    /* background-color: blue; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .title_btn_bottom a {
+    color: black;
+    text-decoration: none;
+    font-size: 0.55em;
+    text-align: center;
+    font-family: Poppins;
+  }
+
+  .btn_menu_bottom i {
+    background-color: white;
+    font-size: 1.5em;
+    color: rgb(20, 20, 20);
+    align-items: center;
+  }
+
   /* ================================================== AKHIR HEADER CSS ========================================== */
 
   /* ================================================== NAV CSS ========================================== */
@@ -212,6 +266,7 @@ button {
   .nav_menu_list.active {
     opacity: 1;
     transform: translateX(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   }
 
   .menu_list {
@@ -222,6 +277,7 @@ button {
     justify-content: space-around;
     align-items: start;
     list-style-type: none;
+
     /* background-color: blue; */
   }
 
@@ -240,7 +296,7 @@ button {
     align-items: center;
   }
 
-  .list_item .icon {
+  .list_item .icon_list {
     color: white;
     font-size: 1.8em;
     position: absolute;
